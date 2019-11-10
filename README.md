@@ -1,7 +1,11 @@
-# Extinction Rebellion - Demands
+# Demos-UK
 
-Uses React.js and Node.js, sets up a simple API and deploys with Heroku.
-Based on this example: https://www.youtube.com/watch?v=eHWK4Pu6dmE
+Overview of who your political representative is, what they're doing and how well their actions match your opinions.
+
+## Stack
+
+Uses react/node/sass and deploys with Heroku.
+Infrastructure based on this example: https://www.youtube.com/watch?v=eHWK4Pu6dmE
 
 ## Getting Started
 
@@ -11,29 +15,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 You'll need Git, Heroku and Node.js to get crackin.
 
-Git - for version control
-
-```
-git --version
-```
-
-...if you don’t have git installed already, this will prompt you to install it.
-
-Node.js
-
-```
-install heroku from ‘masOS installer’ here: (https://nodejs.org/en/download/)
-```
-
-Heroku - for easy deployment
-
-```
-install heroku from ‘download the installer’ here: (https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
-npm i -g heroku
-heroku login
-```
-
-Check all our prerequisites are good and well:
+First check if you have all the prerequisites and that they are good and well:
 
 ```
 git --version
@@ -42,21 +24,43 @@ npm --version
 heroku --version
 ```
 
-### Installing
+...if the above gets any errors then fix them through the relevant solution below:
 
-1. Clone the git repository you just created by using this template to your local machine.
-   From the parent folder where you want the project to live:
+#### Git - for version control
 
 ```
-git clone https://github.com/osaisacson/name-of-project.git
+git --version
 ```
 
-...this will create an 'name-of-project' folder with latest code.
+...if you don’t have git installed already, this will prompt you to install it.
+
+#### Node.js
+
+```
+brew install node
+```
+
+#### Heroku - for easy deployment
+
+```
+brew tap heroku/brew && brew install heroku
+heroku login
+```
+
+### Original setup
+
+1. Clone this git repository to your local machine. Stand in the parent folder where you want the project to live and write:
+
+```
+git clone https://github.com/osaisacson/demos-uk.git
+```
+
+...this will create a 'demos-uk' folder with latest code from github.
 
 2. Initialize git
 
 ```
-cd name-of-project
+cd demos-uk
 git init
 ```
 
@@ -70,7 +74,11 @@ npm install (from root)
 npm install (from client)
 ```
 
-4. Create Heroku instance
+### Heroku deployment - When using this project as a template
+
+ONLY if you're using this project as a template for a brand new project, otherwise this is already done (only once per project) so don't do it.
+
+1. Create Heroku instance
    From root:
 
 ```
@@ -78,13 +86,13 @@ cd .. (to move to root)
 heroku create -b https://github.com/osaisacson/name-of-project.git
 ```
 
-5. Rename Heroku from the default to your project name
+2. Rename Heroku from the default to your project name
 
 ```
 heroku apps:rename name-of-project
 ```
 
-6. Clear buildpacks so Heroku autodetects when you push changes
+3. Clear buildpacks so Heroku autodetects when you push changes
 
 ```
 heroku buildpacks:clear
@@ -92,36 +100,52 @@ heroku buildpacks:clear
 
 ...otherwise the first time you push to heroku you will get an error of 'App not compatible with buildpack'. Clearing it like this fixes that.
 
-7. Save and push changes
-   Make changes, then:
+4. Go to https://www.heroku.com and find your project, then - Deploy/Deployment Method/Github and connect to the name of your matching github repository.
+
+5. Go to Automatic Deploys just underneath where you just were. Keep the default master branch as the one to deploy, and then click 'Enable Automatic Deploys'.
+
+Now every push to master will automatically deploy a new version of the app. Yay.
+
+Note that the free version of heroku uses dynos that rest inbetween visits, so the app may take up to a minute to load when it's been sleeping. To fix this pay Heroku 7USD/month for an upgraded, non sleeping dyno.
+
+### Work, work, workin.
+
+1. Create a new branch
 
 ```
-git add .
-git commit -m "commit message"
-git push (this pushes to the repo on git: https://github.com/osaisacson/name-of-project)
-git push heroku master (this deploys to https://name-of-project.herokuapp.com/)
+git checkout -b your-new-branch
 ```
 
-8. Start local
+2. Start local
    Open a separate window in your terminal, then from root:
 
 ```
 npm run dev
 ```
 
-...see the changes continously update on localhost:3000
+...this concurrently runs the server and client and will open a window with the project in your browser.
 
-9. Open your app with Heroku
+3. Make changes, then:
 
 ```
-heroku open
+git add .
+git commit -m "commit message"
+git push
+(repeat above until happy and glowing), then:
+go to https://github.com/osaisacson/demos-uk and make a PR (just press the pretty obvious button) doublecheck that it is from your branch to the master branch
 ```
 
-...the browser address (https://name-of-project.herokuapp.com/) is the live and shareable version of the app.
+### Build, build, buildin
 
-## Continous work post setup
+1. Go to https://github.com/osaisacson/demos-uk
 
-...step 7-9 above.
+2. Approve an existing PR and merge it to the master branch - this will automatically build the app on Heroku (setup for this is in step 4-5 under the heroku deployment section above)
+
+3. Give it a minute, then check out the heroku address of your app to see that it built successfully with the changes from the PR.
+
+```
+https://demos-uk.herokuapp.com/
+```
 
 ## Useful commands
 
