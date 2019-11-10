@@ -13,7 +13,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-You'll need Git, Heroku and Node.js to get crackin.
+You'll need Git and Node.js to get crackin.
 
 First check if you have all the prerequisites and that they are good and well:
 
@@ -21,7 +21,6 @@ First check if you have all the prerequisites and that they are good and well:
 git --version
 node --version
 npm --version
-heroku --version
 ```
 
 ...if the above gets any errors then fix them through the relevant solution below:
@@ -38,13 +37,6 @@ git --version
 
 ```
 brew install node
-```
-
-#### Heroku - for easy deployment
-
-```
-brew tap heroku/brew && brew install heroku
-heroku login
 ```
 
 ### Original setup
@@ -78,6 +70,23 @@ npm install (from client)
 
 ONLY if you're using this project as a template for a brand new project, otherwise this is already done (only once per project) so don't do it.
 
+##### Install Heroku
+
+First check if you've got Heroku installed already or not
+
+```
+heroku --version
+```
+
+Not? then:
+
+```
+brew tap heroku/brew && brew install heroku
+heroku login
+```
+
+##### Create Heroku instance and setup auto deployment
+
 1. Create Heroku instance
    From root:
 
@@ -110,9 +119,12 @@ Note that the free version of heroku uses dynos that rest inbetween visits, so t
 
 ### Work, work, workin.
 
-1. Create a new branch
+1. Check that you've got the latest version of the master branch (always do this. muy importante.), and then create a new branch of master.
+   If you don't first pull down the latest version of master then you'll be making a new branch off of old code, and get pesky merge conflicts.
 
 ```
+git checkout master
+git pull
 git checkout -b your-new-branch
 ```
 
