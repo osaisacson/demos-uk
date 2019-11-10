@@ -147,7 +147,7 @@ git push (you'll be prompted to set the upstream branch, use the given suggestio
 go to https://github.com/osaisacson/demos-uk and make a PR (just press the pretty obvious button called 'Compare & pull request') doublecheck that it is from your branch to the master branch
 ```
 
-### Build, build, buildin
+### Build, build, buildin.
 
 1. Go to https://github.com/osaisacson/demos-uk
 
@@ -161,13 +161,19 @@ https://demos-uk.herokuapp.com/
 
 ## Useful commands
 
+Check your git branches, and see which one you're currently in.
+
+```
+git branch
+```
+
 Check your git settings so all looks well.
 
 ```
 git config --list
 ```
 
-You can use the git remote command to confirm that a remote named heroku has been set for your app:
+Use the git remote command to confirm that a remote named heroku has been set for your app:
 
 ```
 git remote -v
