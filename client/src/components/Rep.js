@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Score from './Score';
+
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 export default class Rep extends Component {
@@ -30,6 +32,7 @@ export default class Rep extends Component {
           </div>
         </div>
         <h1>...great.</h1>
+        <Score repData={null} />
       </>
     );
   }

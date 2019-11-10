@@ -125,3 +125,26 @@ ul {
 .rep {
   @extend .avatar;
 }
+
+.voting {
+  @extend .flex-spread;
+  width: 300px;
+  padding: 5px; 
+
+  div + div {
+   text-align: right;
+
+
+   p {
+    text-align: center;
+    color: white;
+    background-color: red;
+    padding-right: 8px;
+    padding-left: 8px;
+
+     &.agree {
+       background-color: green;
+     }
+   }
+  }
+}

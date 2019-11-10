@@ -25,7 +25,7 @@ export default class City extends Component {
           <h1>Great, you're in {this.props.city}</h1>
           <img alt="city" className="city" src={cityBackgroundImage} />
           <h1>Now what's your postcode</h1>
-          <Postcode />
+          <Postcode postcode={null} />
         </div>
       </>
     );
