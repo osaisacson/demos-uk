@@ -58,6 +58,12 @@ ul {
   width: 100%;
 }
 
+.flex-center-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .flex-spread {
   display: flex;
   align-items: center;
@@ -107,4 +113,15 @@ ul {
   width: 100%;
   border-bottom: 1px solid rgba(0,0,0,.125);
   padding-top: 5px;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+}
+
+// Sections
+.rep {
+  @extend .avatar;
 }
