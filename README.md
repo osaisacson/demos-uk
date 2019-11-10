@@ -131,14 +131,15 @@ npm run dev
 git add .
 git commit -m "commit message"
 git push
-make a PR on https://github.com/osaisacson/demos-uk from your branch to the master branch
+(repeat above until happy and glowing), then:
+go to https://github.com/osaisacson/demos-uk and make a PR (just press the pretty obvious button) doublecheck that it is from your branch to the master branch
 ```
 
 ### Build, build, buildin
 
 1. Go to https://github.com/osaisacson/demos-uk
 
-2. Approve a PR and merge it to the master branch - this will automatically build the app on Heroku (setup for this is in step 4-5 under the heroku deployment section above)
+2. Approve an existing PR and merge it to the master branch - this will automatically build the app on Heroku (setup for this is in step 4-5 under the heroku deployment section above)
 
 3. Give it a minute, then check out the heroku address of your app to see that it built successfully with the changes from the PR.
 
