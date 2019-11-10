@@ -144,7 +144,7 @@ git add .
 git commit -m "commit message"
 git push (you'll be prompted to set the upstream branch, use the given suggestion)
 (repeat above until happy and glowing), then:
-go to https://github.com/osaisacson/demos-uk and make a PR (just press the pretty obvious button) doublecheck that it is from your branch to the master branch
+go to https://github.com/osaisacson/demos-uk and make a PR (just press the pretty obvious button called 'Compare & pull request') doublecheck that it is from your branch to the master branch
 ```
 
 ### Build, build, buildin
