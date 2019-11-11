@@ -1,7 +1,6 @@
-import React, { Component } from "react";
-import Score from "./Score";
+import React, { Component } from 'react';
 
-import { TwitterTimelineEmbed } from "react-twitter-embed";
+import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 export default class Rep extends Component {
   constructor(props) {
@@ -13,15 +12,15 @@ export default class Rep extends Component {
   render() {
     return (
       <>
-        <h1>This is who speaks for you:</h1>
-        <div className="flex-spread">
-          <div className="rep">
+        <div className="rep-section">
+          <div className="avatar">
             <img alt="rep" src={this.props.repData.repImg} />
           </div>
 
           <div>
-            <p>{this.props.repData.fname}</p>
-            <p>{this.props.repData.lname}</p>
+            <h4>{this.props.repData.fname}</h4>
+            <h4>{this.props.repData.lname}</h4>
+            <h6>speaks for you</h6>
           </div>
         </div>
 
@@ -36,7 +35,6 @@ export default class Rep extends Component {
             </div>
           </div>
         ) : null}
-        <Score repData={null} />
       </>
     );
   }

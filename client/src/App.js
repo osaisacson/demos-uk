@@ -1,9 +1,12 @@
-import React from 'react';
-import './sass/main.scss';
+import React from "react";
+import "./sass/main.scss";
 
-import City from './components/City';
-import Postcode from './components/Postcode';
-import Rep from './components/Rep';
+import Postcode from "./components/Postcode";
+import Rep from "./components/Rep";
+import RepVotes from "./components/RepVotes";
+
+//Import fake data
+import "./dataset.js";
 
 class App extends React.Component {
   constructor(props) {
@@ -13,8 +16,8 @@ class App extends React.Component {
       showPostcode: false,
       showRepInfo: false,
       backgroundImage: null,
-      city: '',
-      postcode: '',
+      city: "",
+      postcode: "",
       repData: {}
     };
   }
@@ -29,16 +32,14 @@ class App extends React.Component {
           {/* Prompt which city they live in */}
           <form onSubmit={this.handleCitySubmit}>
             <input
-              placeholder="Your city"
+              placeholder="City"
               type="text"
               name="username"
               data-lpignore="true"
-              autocomplete="off"
+              autoComplete="off"
               ref={node => (this.inputNode = node)}
             />
           </form>
-          {/* Show the city comment section once city is entered */}
-          {this.state.showCity ? <City city={this.state.city} /> : null}
           {/* Prompt for their postcode */}
           {this.state.showPostcode ? (
             <Postcode passPostcodeToParent={this.handlePostcodeSubmit} />
@@ -46,6 +47,9 @@ class App extends React.Component {
           {/* Show the info for their rep*/}
           {this.state.showRepInfo ? <Rep repData={this.state.repData} /> : null}
         </div>
+        {this.state.showRepInfo ? (
+          <RepVotes votingRecord={this.state.repData.votingRecord} />
+        ) : null}
       </div>
     );
   }
@@ -60,10 +64,10 @@ class App extends React.Component {
       showCity: true,
       showPostcode: true,
       backgroundImage:
-        'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
+        "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
     });
 
-    console.log('You entered your city is:');
+    console.log("You entered your city is:");
     console.log(currentCity);
     console.log("...but since this is only a demo let's say you said 'London'");
   };
@@ -74,45 +78,17 @@ class App extends React.Component {
     let currentPostcode = event.target.username.value;
 
     let postcodeCheck = true;
-    // True for now. Add a function here that checks if the postcode is valid. If so, return true, else return an error message.
+    // Add a function here that checks if the postcode is valid. If so, return true, else return an error message.
 
     //Here should be an API call to https://www.theyworkforyou.com/api/docs/getConstituency, returning the data for the rep matching the given postcode and setting it as repData below.
 
     this.setState({
       postCode: currentPostcode,
       showRepInfo: true,
-      repData: {
-        id: '1',
-        fname: 'Karin',
-        lname: 'Smyth',
-        repImg: 'https://www.theyworkforyou.com/images/mpsL/25390.jpg',
-        twitterUrl: 'https://twitter.com/karinsmyth',
-        bills: [
-          {
-            id: '1',
-            text: 'Exit the EU',
-            voted: 'yes'
-          },
-          {
-            id: '2',
-            text: 'Raise all taxes',
-            voted: 'yes'
-          },
-          {
-            id: '3',
-            text: 'Ban all refugees',
-            voted: false
-          },
-          {
-            id: '4',
-            text: 'Kill all cats',
-            voted: 'no'
-          }
-        ]
-      }
+      repData: window.Dataset.representatives[0] //should return data of only the rep that matches the postcode
     });
 
-    console.log('You entered your postcode is:');
+    console.log("You entered your postcode is:");
     console.log(currentPostcode);
     console.log("...but since this is only a demo let's say it was 'BS3 1QP'");
   };
