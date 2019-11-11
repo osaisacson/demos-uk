@@ -49,27 +49,32 @@ export default class RepVotes extends Component {
       },
       {
         eventKey: "foreign-policy",
-        title: "Foreign Policy & Defense",
+        title: "Foreign Policy",
         category: foreignPolicy
       },
       {
         eventKey: "welfare-and-benefits",
         title: "Welfare & Benefits",
         category: welfareAndBenefits
+      },
+      {
+        eventKey: "welfare-and-benefits2",
+        title: "Welfare & Benefits",
+        category: welfareAndBenefits
       }
     ];
 
     return (
-      <>
+      <div className="tabs-section">
         <Tabs
-          className="tabs"
+          className="scroll-menu"
           defaultActiveKey="social-issues"
           id="uncontrolled-tab-example"
         >
           {allVotingCategories.map(category => {
             return (
               <Tab
-                className="tab"
+                className="scroll-tab"
                 key={category.eventKey}
                 eventKey={category.eventKey}
                 title={category.title}
@@ -81,7 +86,7 @@ export default class RepVotes extends Component {
         </Tabs>
 
         <h1>{comparisonScore}</h1>
-      </>
+      </div>
     );
   }
 }
