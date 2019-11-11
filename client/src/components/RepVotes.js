@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import VotingSection from "./VotingSection";
+import React, { Component } from 'react';
+import VotingSection from './VotingSection';
 
-import Tabs from "react-bootstrap/Tabs";
-import Tab from "react-bootstrap/Tab";
+import Tabs from 'react-bootstrap/Tabs';
+import Tab from 'react-bootstrap/Tab';
 
 export default class RepVotes extends Component {
   constructor(props) {
@@ -27,39 +27,31 @@ export default class RepVotes extends Component {
   );
 
   render() {
-    let comparisonScore = "28%";
-    //Based on below UI which should show the issues on which the rep has voted, and let the user click agree or not agree. user agrees with all, comparisonScore is 100%, with none, 0%.
-
-    // Define subsets of main card set
+    // Define subsets of main votingRecord
     let socialIssues = this.props.votingRecord.filter(
-      record => record.category === "social issues"
+      record => record.category === 'social issues'
     );
     let foreignPolicy = this.props.votingRecord.filter(
-      record => record.category === "foreign policy and defence"
+      record => record.category === 'foreign policy and defence'
     );
     let welfareAndBenefits = this.props.votingRecord.filter(
-      record => record.category === "welfare and benefits"
+      record => record.category === 'welfare and benefits'
     );
 
     let allVotingCategories = [
       {
-        eventKey: "social-issues",
-        title: "Social Issues",
+        eventKey: 'social-issues',
+        title: 'Social Issues',
         category: socialIssues
       },
       {
-        eventKey: "foreign-policy",
-        title: "Foreign Policy",
+        eventKey: 'foreign-policy',
+        title: 'Foreign Policy',
         category: foreignPolicy
       },
       {
-        eventKey: "welfare-and-benefits",
-        title: "Welfare & Benefits",
-        category: welfareAndBenefits
-      },
-      {
-        eventKey: "welfare-and-benefits2",
-        title: "Welfare & Benefits",
+        eventKey: 'welfare-and-benefits',
+        title: 'Welfare & Benefits',
         category: welfareAndBenefits
       }
     ];
@@ -84,8 +76,6 @@ export default class RepVotes extends Component {
             );
           })}
         </Tabs>
-
-        <h1>{comparisonScore}</h1>
       </div>
     );
   }

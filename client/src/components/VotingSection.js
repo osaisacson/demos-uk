@@ -14,8 +14,8 @@ export default class VotingSection extends Component {
         <h2>{this.props.title}</h2>
         {this.props.category.map(item => {
           return (
-            <div className="voting-section">
-              <div key={item.id}>
+            <div className="voting-section" key={item.id}>
+              <div>
                 <p>{item.text}</p>
               </div>
               <YourVote />
