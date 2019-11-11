@@ -198,6 +198,21 @@ input {
   }
 }
 
+//inputs
+::-webkit-input-placeholder { /* Edge */
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+::placeholder {
+  text-transform: uppercase;
+  font-size: 11px;
+}
 
 
 

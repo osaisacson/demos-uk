@@ -12,7 +12,7 @@ export default class Postcode extends Component {
       <>
         <form onSubmit={this.props.passPostcodeToParent}>
           <input
-            placeholder="your postcode (eg. BS3 1QP)"
+            placeholder="Postcode (eg. BS3 1QP)"
             type="text"
             name="username"
             data-lpignore="true"

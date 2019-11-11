@@ -32,7 +32,7 @@ class App extends React.Component {
           {/* Prompt which city they live in */}
           <form onSubmit={this.handleCitySubmit}>
             <input
-              placeholder="Your city"
+              placeholder="City"
               type="text"
               name="username"
               data-lpignore="true"
