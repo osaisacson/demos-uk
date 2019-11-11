@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import YourVote from "./YourVote";
 
 export default class VotingSection extends Component {
   constructor(props) {
@@ -13,10 +14,12 @@ export default class VotingSection extends Component {
         <h2>{this.props.title}</h2>
         {this.props.category.map(item => {
           return (
-            <div key={item.id}>
-              <p>{item.text}</p>
-              <p>{item.voted}</p>
-            </div>
+            <>
+              <div key={item.id}>
+                <p>{item.text}</p>
+              </div>
+              <YourVote />
+            </>
           );
         })}
       </div>
