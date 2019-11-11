@@ -1,12 +1,12 @@
-import React from "react";
-import "./sass/main.scss";
+import React from 'react';
+import './sass/main.scss';
 
-import Postcode from "./components/Postcode";
-import Rep from "./components/Rep";
-import RepVotes from "./components/RepVotes";
+import Postcode from './components/Postcode';
+import Rep from './components/Rep';
+import RepVotes from './components/RepVotes';
 
 //Import fake data
-import "./dataset.js";
+import './dataset.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -16,8 +16,8 @@ class App extends React.Component {
       showPostcode: false,
       showRepInfo: false,
       backgroundImage: null,
-      city: "",
-      postcode: "",
+      city: '',
+      postcode: '',
       repData: {}
     };
   }
@@ -29,6 +29,7 @@ class App extends React.Component {
     return (
       <div className="App" style={backgroundImage}>
         <div className="main-content-wrapper">
+          <br></br>
           {/* Prompt which city they live in */}
           <form onSubmit={this.handleCitySubmit}>
             <input
@@ -64,10 +65,10 @@ class App extends React.Component {
       showCity: true,
       showPostcode: true,
       backgroundImage:
-        "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+        'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
     });
 
-    console.log("You entered your city is:");
+    console.log('You entered your city is:');
     console.log(currentCity);
     console.log("...but since this is only a demo let's say you said 'London'");
   };
@@ -88,7 +89,7 @@ class App extends React.Component {
       repData: window.Dataset.representatives[0] //should return data of only the rep that matches the postcode
     });
 
-    console.log("You entered your postcode is:");
+    console.log('You entered your postcode is:');
     console.log(currentPostcode);
     console.log("...but since this is only a demo let's say it was 'BS3 1QP'");
   };
