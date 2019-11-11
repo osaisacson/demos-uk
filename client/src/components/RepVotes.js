@@ -27,10 +27,7 @@ export default class RepVotes extends Component {
   );
 
   render() {
-    let comparisonScore = "28%";
-    //Based on below UI which should show the issues on which the rep has voted, and let the user click agree or not agree. user agrees with all, comparisonScore is 100%, with none, 0%.
-
-    // Define subsets of main card set
+    // Define subsets of main votingRecord
     let socialIssues = this.props.votingRecord.filter(
       record => record.category === "social issues"
     );
@@ -39,6 +36,21 @@ export default class RepVotes extends Component {
     );
     let welfareAndBenefits = this.props.votingRecord.filter(
       record => record.category === "welfare and benefits"
+    );
+    let taxationAndEmployment = this.props.votingRecord.filter(
+      record => record.category === "taxation and employment"
+    );
+    let businessAndEconomy = this.props.votingRecord.filter(
+      record => record.category === "business and economy"
+    );
+    let health = this.props.votingRecord.filter(
+      record => record.category === "health"
+    );
+    let education = this.props.votingRecord.filter(
+      record => record.category === "education"
+    );
+    let environment = this.props.votingRecord.filter(
+      record => record.category === "environment"
     );
 
     let allVotingCategories = [
@@ -58,9 +70,29 @@ export default class RepVotes extends Component {
         category: welfareAndBenefits
       },
       {
-        eventKey: "welfare-and-benefits2",
-        title: "Welfare & Benefits",
-        category: welfareAndBenefits
+        eventKey: "taxation-and-employment",
+        title: "Taxation and Employment",
+        category: taxationAndEmployment
+      },
+      {
+        eventKey: "business-and-economy",
+        title: "Business and The Economy",
+        category: businessAndEconomy
+      },
+      {
+        eventKey: "health",
+        title: "Health",
+        category: health
+      },
+      {
+        eventKey: "education",
+        title: "Education",
+        category: education
+      },
+      {
+        eventKey: "environment",
+        title: "Environment",
+        category: environment
       }
     ];
 
@@ -84,8 +116,6 @@ export default class RepVotes extends Component {
             );
           })}
         </Tabs>
-
-        <h1>{comparisonScore}</h1>
       </div>
     );
   }
