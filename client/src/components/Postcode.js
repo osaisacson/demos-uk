@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import Rep from "./Rep";
+import React, { Component } from 'react';
 
 export default class Postcode extends Component {
   constructor(props) {
@@ -9,25 +8,18 @@ export default class Postcode extends Component {
   }
 
   render() {
-    let postcodeCheck = true;
-    // True for now. Add a function here that checks if the postcode is valid. If so, return true and trigger repData.
-
-    let repData = null;
-    // Add a function here that checks if the postcode matches a rep found in the gov data. If so, set this.state.rep to that data.
-
     return (
       <>
-        <input
-          className="text-center"
-          type="text"
-          value=""
-          placeholder="Postcode"
-        ></input>
-        {postcodeCheck ? (
-          <Rep rep={repData} />
-        ) : (
-          <h3>Hey your postcode does not seem to exist. Try again.</h3>
-        )}
+        <form onSubmit={this.props.passPostcodeToParent}>
+          <input
+            placeholder="your postcode (eg. BS3 1QP)"
+            type="text"
+            name="username"
+            data-lpignore="true"
+            autocomplete="off"
+            ref={node => (this.inputNode = node)}
+          />
+        </form>
       </>
     );
   }
