@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class Postcode extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ export default class Postcode extends Component {
       <>
         <form onSubmit={this.props.passPostcodeToParent}>
           <input
-            placeholder="Postcode (eg. BS3 1QP)"
+            placeholder="and postcode"
             type="text"
             name="username"
             data-lpignore="true"

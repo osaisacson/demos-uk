@@ -16,11 +16,14 @@ $dark-green: rgb(26, 155, 65);
 $green-border: #78dd92;
 $green-shadow: rgb(220, 255, 228);
 
-$light-red: rgb(187, 68, 68);
-$red: rgb(192, 43, 43);
-$dark-red: rgb(155, 26, 26);
-$red-border: #dd7878;
-$red-shadow: rgb(255, 220, 220);
+$light-red: rgb(187, 68, 98);
+$red: rgb(122, 14, 68);
+$dark-red: rgb(78, 10, 50);
+$red-border: #8b253f;
+$red-shadow: rgb(255, 220, 236);
+
+$score-background: rgba(29, 3, 80, 0.8);
+$nav-background: rgba(58, 10, 53, 0.8);
 
 //Variables
 $start-of-tabs: calc(100vh + 50px);
@@ -29,7 +32,6 @@ $start-of-tabs: calc(100vh + 50px);
 .App {
   width: 100%;
   height: $start-of-tabs;
-  background-position: fixed;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -39,9 +41,6 @@ body {
   background-color: transparent;
   font-family: 'Libre Franklin', sans-serif;
 }
-
-
-
 
 //Text
 h1,
@@ -72,6 +71,11 @@ ul {
 
 input {
   text-align: center;
+  margin-bottom: 3px;
+  box-shadow: none;
+  border: 0;
+  border-radius: 3px;
+  opacity: .9;
 
   &:focus { 
     outline: none; 
@@ -303,7 +307,7 @@ button {
 }
 
 .score {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: $score-background;
   display: flex;
   flex-direction: column;
   height: 110px;
@@ -336,7 +340,7 @@ button {
 
 .nav-tabs {
   height: 35px;
-  background-color: #333;
+  background-color: $nav-background;
   overflow: auto;
   white-space: nowrap;
 
@@ -365,17 +369,17 @@ button {
 //inputs
 ::-webkit-input-placeholder { /* Edge */
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: 10px;
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: 10px;
 }
 
 ::placeholder {
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: 10px;
 }
 
 

@@ -9,7 +9,7 @@ export default class Score extends Component {
 
   render() {
     let comparisonScore = "28%";
-    //Based on below UI which should show the issues on which the rep has voted, and let the user click agree or not agree. user agrees with all, comparisonScore is 100%, with none, 0%.
+    //comparisonScore should be updated based on how many category agree/disagree items the user has clicked
 
     return (
       <div className="score">
