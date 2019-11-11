@@ -5,6 +5,9 @@ import City from './components/City';
 import Postcode from './components/Postcode';
 import Rep from './components/Rep';
 
+//Import fake data
+import './dataset.js';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -33,7 +36,7 @@ class App extends React.Component {
               type="text"
               name="username"
               data-lpignore="true"
-              autocomplete="off"
+              autoComplete="off"
               ref={node => (this.inputNode = node)}
             />
           </form>
@@ -74,42 +77,14 @@ class App extends React.Component {
     let currentPostcode = event.target.username.value;
 
     let postcodeCheck = true;
-    // True for now. Add a function here that checks if the postcode is valid. If so, return true, else return an error message.
+    // Add a function here that checks if the postcode is valid. If so, return true, else return an error message.
 
     //Here should be an API call to https://www.theyworkforyou.com/api/docs/getConstituency, returning the data for the rep matching the given postcode and setting it as repData below.
 
     this.setState({
       postCode: currentPostcode,
       showRepInfo: true,
-      repData: {
-        id: '1',
-        fname: 'Karin',
-        lname: 'Smyth',
-        repImg: 'https://www.theyworkforyou.com/images/mpsL/25390.jpg',
-        twitterUrl: 'https://twitter.com/karinsmyth',
-        bills: [
-          {
-            id: '1',
-            text: 'Exit the EU',
-            voted: 'yes'
-          },
-          {
-            id: '2',
-            text: 'Raise all taxes',
-            voted: 'yes'
-          },
-          {
-            id: '3',
-            text: 'Ban all refugees',
-            voted: false
-          },
-          {
-            id: '4',
-            text: 'Kill all cats',
-            voted: 'no'
-          }
-        ]
-      }
+      repData: window.Dataset.representatives[0] //should return data of only the rep that matches the postcode
     });
 
     console.log('You entered your postcode is:');

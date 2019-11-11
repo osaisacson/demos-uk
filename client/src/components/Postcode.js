@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export default class Postcode extends Component {
   constructor(props) {
@@ -16,7 +16,7 @@ export default class Postcode extends Component {
             type="text"
             name="username"
             data-lpignore="true"
-            autocomplete="off"
+            autoComplete="off"
             ref={node => (this.inputNode = node)}
           />
         </form>

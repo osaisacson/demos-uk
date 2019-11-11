@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import Score from "./Score";
+import React, { Component } from 'react';
+import RepVotes from './RepVotes';
 
-import { TwitterTimelineEmbed } from "react-twitter-embed";
+import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 export default class Rep extends Component {
   constructor(props) {
@@ -36,7 +36,7 @@ export default class Rep extends Component {
             </div>
           </div>
         ) : null}
-        <Score repData={null} />
+        <RepVotes votingRecord={this.props.repData.votingRecord} />
       </>
     );
   }
