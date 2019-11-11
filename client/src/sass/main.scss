@@ -35,6 +35,17 @@ h2 {
   font-weight: 800;
 }
 
+h4 {
+  margin: 0;
+}
+
+h6 {
+  margin: 0;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
 ul {
   padding-inline-start: 0;
 }
@@ -140,8 +151,9 @@ input {
   @extend .flex-center-column;
 }
 
-.rep {
-  @extend .avatar;
+.rep-section {
+  @extend .flex-spread;
+  margin: 20px auto;
 }
 
 .tabs-section {

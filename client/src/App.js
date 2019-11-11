@@ -1,7 +1,6 @@
 import React from "react";
 import "./sass/main.scss";
 
-import City from "./components/City";
 import Postcode from "./components/Postcode";
 import Rep from "./components/Rep";
 import RepVotes from "./components/RepVotes";
@@ -41,8 +40,6 @@ class App extends React.Component {
               ref={node => (this.inputNode = node)}
             />
           </form>
-          {/* Show the city comment section once city is entered */}
-          {this.state.showCity ? <City city={this.state.city} /> : null}
           {/* Prompt for their postcode */}
           {this.state.showPostcode ? (
             <Postcode passPostcodeToParent={this.handlePostcodeSubmit} />
