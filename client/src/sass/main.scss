@@ -295,9 +295,15 @@ button {
   border-bottom: 1px solid $grey-shadow;
 }
 
+.rep-and-score-section {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  margin: 20px 0;
+}
+
 .rep-section {
   @extend .flex-spread;
-  margin: 20px auto;
 }
 
 .tabs-section {

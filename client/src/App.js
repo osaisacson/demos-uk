@@ -4,7 +4,6 @@ import "./sass/main.scss";
 import Postcode from "./components/Postcode";
 import Rep from "./components/Rep";
 import RepVotes from "./components/RepVotes";
-import Score from "./components/Score";
 
 //Import fake data
 import "./dataset.js";
@@ -48,7 +47,6 @@ class App extends React.Component {
           ) : null}
           {/* Show the info for their rep*/}
           {this.state.showRepInfo ? <Rep repData={this.state.repData} /> : null}
-          {this.state.showRepInfo ? <Score /> : null}
         </div>
         {this.state.showRepInfo ? (
           <RepVotes votingRecord={this.state.repData.votingRecord} />
