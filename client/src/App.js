@@ -82,7 +82,7 @@ class App extends React.Component {
 
     let currentPostcode = event.target.username.value;
 
-    let postcodeCheck = true;
+    // let postcodeCheck = true;
     // Add a function here that checks if the postcode is valid. If so, return true, else return an error message.
 
     //Here should be an API call to https://www.theyworkforyou.com/api/docs/getConstituency, returning the data for the rep matching the given postcode and setting it as repData below.
