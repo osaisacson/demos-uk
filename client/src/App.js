@@ -41,6 +41,7 @@ class App extends React.Component {
               ref={node => (this.inputNode = node)}
             />
           </form>
+          <h6 className="fade-in-out">press enter when done</h6>
           {/* Prompt for their postcode */}
           {this.state.showPostcode ? (
             <Postcode passPostcodeToParent={this.handlePostcodeSubmit} />
