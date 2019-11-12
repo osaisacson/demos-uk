@@ -71,7 +71,7 @@ ul {
 
 input {
   text-align: center;
-  margin-bottom: 3px;
+  margin: 2px 0;
   box-shadow: none;
   border: 0;
   border-radius: 3px;
@@ -394,7 +394,7 @@ button {
   opacity: 0;
   -webkit-animation: fadeinout 4s linear forwards;
   animation: fadeinout 4s linear forwards;
-  animation-delay: 5s;
+  animation-delay: 3.5s;
 }
 
 @-webkit-keyframes fadeinout {
