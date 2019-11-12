@@ -4,7 +4,6 @@ import "./sass/main.scss";
 import Postcode from "./components/Postcode";
 import Rep from "./components/Rep";
 import RepVotes from "./components/RepVotes";
-import Score from "./components/Score";
 
 //Import fake data
 import "./dataset.js";
@@ -42,13 +41,13 @@ class App extends React.Component {
               ref={node => (this.inputNode = node)}
             />
           </form>
+          <h6 className="fade-in-out">press enter when done</h6>
           {/* Prompt for their postcode */}
           {this.state.showPostcode ? (
             <Postcode passPostcodeToParent={this.handlePostcodeSubmit} />
           ) : null}
           {/* Show the info for their rep*/}
           {this.state.showRepInfo ? <Rep repData={this.state.repData} /> : null}
-          {this.state.showRepInfo ? <Score /> : null}
         </div>
         {this.state.showRepInfo ? (
           <RepVotes votingRecord={this.state.repData.votingRecord} />
@@ -82,7 +81,7 @@ class App extends React.Component {
 
     let currentPostcode = event.target.username.value;
 
-    let postcodeCheck = true;
+    // let postcodeCheck = true;
     // Add a function here that checks if the postcode is valid. If so, return true, else return an error message.
 
     //Here should be an API call to https://www.theyworkforyou.com/api/docs/getConstituency, returning the data for the rep matching the given postcode and setting it as repData below.
